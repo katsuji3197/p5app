@@ -1,15 +1,12 @@
 "use client";
-import SketchComponent from "../../components/SletchComponent"
+import SketchComponent from "../../components/RainComponent"
 
 export default function Home() {
   return (
-    <div id="sketch-div">
-      
+    <div id="min-w-screen min-h-screen">
       <span className="fixed h-screen w-screen -z-50">
         <SketchComponent />
       </span>
-      <h1>My Sketch</h1>
-      <p>This is my sketch!</p>
     </div>
   )
 }

@@ -4,13 +4,13 @@ function random(a: number, b: number): number {
   return Math.floor(Math.random() * (b + 1 - a)) + a;
 }
 
-const sketch = (p: p5) => {
+const rain = (p: p5) => {
   
   let drop: Drop[] = [];
 
   p.setup = () => {
+    p.background(70);
     p.createCanvas(p.windowWidth, p.windowHeight);
-    p.background(100);
     p.noStroke();
     p.smooth();
     for (let i = 0; i < 600; i++) {
@@ -19,7 +19,7 @@ const sketch = (p: p5) => {
   };
 
   p.draw = () => {
-    p.background(0);
+    p.background(70);
     for (let i = 0; i < 600; i++) {
       drop[i].show();
       drop[i].update();
@@ -41,7 +41,7 @@ const sketch = (p: p5) => {
   
     show() {
       p.noStroke();
-      p.fill(255);
+      p.fill(130,130,220);
       p.ellipse(this.x, this.y, random(1, 5), random(1, 5));
     }
   
@@ -56,4 +56,4 @@ const sketch = (p: p5) => {
   }
 };
 
-export default sketch;
+export default rain;
