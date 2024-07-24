@@ -1,4 +1,3 @@
-'use client'
 import p5 from "p5";
 
 function random(a: number, b: number): number {
