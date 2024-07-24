@@ -7,7 +7,7 @@ function random(a: number, b: number): number {
 const Sunny = (p: p5) => {
 
   let startColor: number = 255;
-  let speedAnimate: number = 10;
+  let speedAnimate: number = 15;
   
   p.setup = () => {
     p.createCanvas(p.windowWidth, p.windowHeight);
@@ -29,8 +29,8 @@ const Sunny = (p: p5) => {
 
     for (let x: number = 0; x < p.windowWidth; x += gap + rectWidth) {
       const green: number = startColor - x;
-      const red: number = 255;
-      p.fill(red, green, 0);
+      const blue: number = 255;
+      p.fill(0, green, blue);
       p.rect(x, 0, rectWidth, p.windowHeight);
     }
 
