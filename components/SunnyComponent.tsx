@@ -19,7 +19,7 @@ export default function SunnyComponent() {
       </span>
       <div className="w-screen h-screen flex justify-center items-center gap-12 bg-gray-700 bg-opacity-40">
         <Image src='/sunny.svg' height={400} width={400} alt={"アイコン"} className="drop-shadow-xl hover:scale-75 duration-300"/>
-        <div className="flex flex-col items-center gap-8">
+        <div className="flex flex-col items-center gap-8 text-white">
         <p className="text-3xl drop-shadow-md hover:scale-50 duration-300">現在の金沢市の天気</p>
         <p className="text-8xl font-bold drop-shadow-lg hover:scale-50 duration-300">晴れ</p>
         </div>
