@@ -2,7 +2,7 @@
 import Link from "next/link";
 import ThunderComponent from "../../../components/ThunderComponent";
 
-export  default function rainy (){
+export  default function Thunder (){
     return(
         <main>
             <span className="fixed -z-50">
