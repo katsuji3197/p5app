@@ -1,6 +1,7 @@
 "use client";
 import CloudyComponent from "../../components/CloudyComponent";
 import RainComponent from "../../components/RainComponent"
+import SnowComponent from "../../components/SnowComponent";
 import SunnyComponent from "../../components/SunnyComponent";
 import ThunderComponent from "../../components/ThunderComponent";
 
@@ -11,7 +12,8 @@ export default function Home() {
         {/* <SunnyComponent /> */}
         {/* <RainComponent /> */}
         {/* <CloudyComponent/> */}
-        <ThunderComponent/>
+        {/* <ThunderComponent/> */}
+        <SnowComponent/>
       </span>
     </div>
   )
