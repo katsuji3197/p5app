@@ -1,5 +1,4 @@
-"use client";
-
+'use client'
 import { useEffect, useState, FC } from "react";
 import CloudyComponent from "../../components/CloudyComponent";
 import RainComponent from "../../components/RainComponent";
