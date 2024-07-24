@@ -2,6 +2,7 @@
 import CloudyComponent from "../../components/CloudyComponent";
 import RainComponent from "../../components/RainComponent"
 import SunnyComponent from "../../components/SunnyComponent";
+import ThunderComponent from "../../components/ThunderComponent";
 
 export default function Home() {
   return (
@@ -9,7 +10,8 @@ export default function Home() {
       <span className="w-screen -z-50">
         {/* <SunnyComponent /> */}
         {/* <RainComponent /> */}
-        <CloudyComponent/>
+        {/* <CloudyComponent/> */}
+        <ThunderComponent/>
       </span>
     </div>
   )
