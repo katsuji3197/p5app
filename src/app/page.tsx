@@ -77,7 +77,7 @@ const Home: FC = () => {
   // );
 
   return(
-    <>
+    <div className="text-white">
       <span className="fixed -z-50">
         <SunnyComponent/>
       </span>
@@ -91,7 +91,7 @@ const Home: FC = () => {
           <Link href="/thunder" className="py-4 w-40 hover:bg-black rounded-full duration-300 hover:bg-opacity-30">雷</Link>
         </div>
       </span>
-    </>
+    </div>
   );
 
 
