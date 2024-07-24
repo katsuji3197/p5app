@@ -13,6 +13,7 @@ export  default function Thunder (){
                 <Link href="/" className="py-4 w-40 hover:bg-black rounded-full duration-300 hover:bg-opacity-30">現在の天気</Link>
                 <Link href="/sunny" className="py-4 w-40 hover:bg-black rounded-full duration-300 hover:bg-opacity-30">晴れ</Link>
                 <Link href="/cloudy" className="py-4 w-40 hover:bg-black rounded-full duration-300 hover:bg-opacity-30">曇り</Link>
+                <Link href="/snow" className="py-4 w-40 hover:bg-black rounded-full duration-300 hover:bg-opacity-30">雪</Link>
                 <Link href="/rainy" className="py-4 w-40 hover:bg-black rounded-full duration-300 hover:bg-opacity-30">雨</Link>
                 <p className="bg-gray-500 py-4 w-40 rounded-full shadow-xl">雷</p>
             </div>
