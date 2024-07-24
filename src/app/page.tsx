@@ -64,7 +64,7 @@ const Home: FC = () => {
                 <Link href="/snow" className="py-4 w-40 hover:bg-black rounded-full duration-300 hover:bg-opacity-30">雪</Link>
                 <Link href="/thunder" className="py-4 w-40 hover:bg-black rounded-full duration-300 hover:bg-opacity-30">雷</Link>
               </div>
-              <span className="flex items-end gap-4 mb-12">
+              <span className="flex items-end gap-4 mb-12 text-white">
                 {temperature !== null && <div className="text-5xl drop-shadow-xl"> {temperature}</div>}
                 <p className="text-2xl drop-shadow-xl">℃</p>
               </span>
