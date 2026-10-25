@@ -1,6 +1,8 @@
 'use client'
 import Link from "next/link";
-import SnowComponent from "../../../components/SnowComponent";
+import dynamic from "next/dynamic";
+
+const SnowComponent = dynamic(() => import("../../../components/SnowComponent"), { ssr: false });
 
 export  default function Thunder (){
     return(

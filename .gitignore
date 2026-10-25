@@ -26,7 +26,10 @@ yarn-debug.log*
 yarn-error.log*
 
 # local env files
-.env*.local
+# .env.example は値を含まない雛形として追跡する
+.env
+.env.*
+!.env.example
 
 # vercel
 .vercel

@@ -1,27 +1,31 @@
 'use client'
-import { useEffect, useState, FC } from "react";
-import CloudyComponent from "../../components/CloudyComponent";
-import RainComponent from "../../components/RainComponent";
-import SnowComponent from "../../components/SnowComponent";
-import SunnyComponent from "../../components/SunnyComponent";
-import ThunderComponent from "../../components/ThunderComponent";
-import { getWeather , WeatherData } from "./lib/geatweather";
+import { useEffect, useState, FC, ComponentType } from "react";
 import Link from "next/link";
 import dynamic from "next/dynamic";
+import { getWeather, hasWeatherApiKey, missingWeatherApiKeyMessage, WeatherData } from "./lib/geatweather";
+
+const CloudyComponent = dynamic(() => import("../../components/CloudyComponent"), { ssr: false });
+const RainComponent = dynamic(() => import("../../components/RainComponent"), { ssr: false });
+const SnowComponent = dynamic(() => import("../../components/SnowComponent"), { ssr: false });
+const SunnyComponent = dynamic(() => import("../../components/SunnyComponent"), { ssr: false });
+const ThunderComponent = dynamic(() => import("../../components/ThunderComponent"), { ssr: false });
 
 const Home: FC = () => {
   const [weather, setWeather] = useState<string | null>(null);
   const [temperature, setTemperature] = useState<number | null>(null);
-  const [description, setDescription] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const visibleError = hasWeatherApiKey() ? error : missingWeatherApiKeyMessage;
   
   useEffect(() => {
+    if (!hasWeatherApiKey()) {
+      return;
+    }
+
     async function fetchWeather() {
       try {
         const weatherData: WeatherData = await getWeather("Kanazawa");
         setWeather(weatherData.weather[0].main);
         setTemperature(weatherData.main.temp);
-        setDescription(weatherData.weather[0].description);
       } catch (err) {
         setError((err as Error).message);
       }
@@ -30,7 +34,7 @@ const Home: FC = () => {
     fetchWeather();
   }, []);
 
-  let WeatherComponent: FC;
+  let WeatherComponent: ComponentType;
   if (weather === "Clear") {
     WeatherComponent = SunnyComponent;
   } else if (weather === "Rain") {
@@ -48,8 +52,13 @@ const Home: FC = () => {
   return (
     <div id="min-w-screen">
       <span className="w-screen -z-50">
-        {error ? (
-          <div>Error: {error}</div>
+        {visibleError ? (
+          <div className="min-h-screen flex items-center justify-center p-6">
+            <div role="alert" className="max-w-lg bg-black/70 text-white rounded-2xl px-6 py-5 text-center leading-relaxed">
+              <p className="text-xl mb-2">天気を表示できません</p>
+              <p>{visibleError}</p>
+            </div>
+          </div>
         ) : (
           <main>
             <span className="fixed -z-50">
